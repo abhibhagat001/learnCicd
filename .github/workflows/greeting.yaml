@@ -1,0 +1,10 @@
+name: Hello World Workflow
+
+on: [push] # This workflow runs on every push to the repository
+
+jobs:
+  hello_world_job: # Define a job named 'hello_world_job'
+    runs-on: ubuntu-latest # Specify the runner environment
+    steps:
+      - name: Say Hello World # Define a step named 'Say Hello World'
+        run: echo "Hello World!" # The command to execute
