@@ -8,3 +8,14 @@ jobs:
     steps:
       - name: 'Get Code'
         run: git clone https://github.com/${{github.repository}}.git
+      - name: Install Node
+        uses: actions/setup-node@v4
+        with: 
+           node-version: 20
+      - name: 'install dependecies'
+        run: npm install
+      - name: 'Run Tests'
+        run: npm run test
+
+
+           
