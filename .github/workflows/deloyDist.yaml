@@ -16,6 +16,24 @@ jobs:
         run: npm install
       - name: 'Run Tests'
         run: npm run test
+        
+  deploy: 
+    needs: hello_world_job
+    runs-on: ubuntu-latest 
+    steps:
+      - name: 'Get Code'
+        uses: actions/checkout@v4
 
+      - name: Install Node
+        uses: actions/setup-node@v4
+        with: 
+           node-version: 20
+
+      - name: 'install dependecies'
+        run: npm install
+        
+      - name: 'create build'
+        run: npm run build
+      
 
            
