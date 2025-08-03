@@ -1,6 +1,13 @@
 name: deploydist
 
-on: [push] # This workflow runs on every push to the repository
+# on: [push] 
+on:
+    push:
+        branches:
+            - main
+        paths-ignore:
+            - '.github/workflows/*'
+            - README.md
 
 jobs:
   hello_world_job: # Define a job named 'hello_world_job'
@@ -18,7 +25,7 @@ jobs:
         with: 
           path: ~/.npm
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
-          
+
       - name: 'install dependecies'
         run: npm install
       - name: 'Run Tests'
