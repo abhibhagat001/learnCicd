@@ -1,0 +1,10 @@
+name: Hello World Workflow
+
+on: [push] # This workflow runs on every push to the repository
+
+jobs:
+  hello_world_job: # Define a job named 'hello_world_job'
+    runs-on: ubuntu-latest # Specify the runner environment
+    steps:
+      - name: 'Get Code'
+        run: git clone https://github.com/${{github.repository}}.git
